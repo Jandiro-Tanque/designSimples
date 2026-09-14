@@ -1,0 +1,6 @@
+{% load static %}
+<div class="project-preview {{ project.slug }}">
+  <div class="preview-nav"><span>{{ project.name }}<span class="preview-dot">.</span></span><span class="preview-nav-label">{{ project.tagline }}</span>{% include 'website/partials/icon.html' with name='plus' size=14 %}</div>
+  <div class="preview-scene"><img src="{% static project.image %}" alt="{{ project.alt }}" loading="lazy"><div class="preview-copy"><span>{{ project.eyebrow }}</span><h3>{{ project.headline }}</h3><span class="preview-link">{{ project.action }} {% include 'website/partials/icon.html' with name='arrow-up-right' size=13 %}</span></div></div>
+  <div class="preview-bottom"><span>{{ project.caption }}</span><span>01 / 03</span></div>
+</div>

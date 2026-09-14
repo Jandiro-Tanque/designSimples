@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-AO">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="DesignSimples: criação de sites, landing pages e manutenção para pequenos negócios em Angola. Fale directamente com quem vai construir o seu site.">
+    <title>DesignSimples | Sites para a sua próxima ideia</title>
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/motion.css' %}">
+    <script src="{% static 'website/vendor/lucide.min.js' %}" defer></script>
+    <script src="{% static 'website/js/site.js' %}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    {% include 'website/partials/header.html' %}
+    <main id="conteudo">{% block content %}{% endblock %}</main>
+    {% include 'website/partials/footer.html' %}
+    {% block dialogs %}{% endblock %}
+  </body>
+</html>

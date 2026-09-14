@@ -1,0 +1,15 @@
+<section class="contact-section" id="contacto"><div class="container contact-grid">
+  <div class="contact-intro" data-reveal><span class="eyebrow">05 / O próximo passo é seu</span><h2>Tem uma ideia?<br>Vamos falar<span>.</span></h2><p>Não precisa de ter tudo definido.<br>Começamos pelo que tem em mente.</p>
+    <a class="contact-direct" href="{{ contact_url }}" target="_blank" rel="noopener noreferrer">{% include 'website/partials/icon.html' with name='message-circle' size=21 %}<span>Prefere uma conversa?<strong>Falar pelo WhatsApp {% include 'website/partials/icon.html' with name='arrow-up-right' size=17 %}</strong></span></a>
+    <a class="email-link" href="mailto:{{ contact.email }}">{% include 'website/partials/icon.html' with name='mail' size=17 %}{{ contact.email }}</a><span class="contact-location">Luanda, Angola · Atendimento em português</span>
+  </div>
+  <form class="brief-form" id="brief-form" data-phone="{{ contact.phone }}" hidden>
+    <div class="form-row"><label for="name">O seu nome <span>*</span><input id="name" name="name" placeholder="Como se chama?" autocomplete="name" required maxlength="100"></label><label for="business">Nome do negócio<input id="business" name="business" placeholder="O seu negócio ou projecto" autocomplete="organization" maxlength="150"></label></div>
+    <label for="service">O que vamos criar?<span class="select-wrap"><select id="service" name="service"><option>Ainda não sei</option>{% for service in services %}<option>{{ service.title }}</option>{% endfor %}</select>{% include 'website/partials/icon.html' with name='chevron-down' size=17 %}</span></label>
+    <label for="message">Conte-me a sua ideia <span>*</span><textarea id="message" name="message" rows="4" placeholder="O que faz o seu negócio? O que gostaria de ter no site?" required maxlength="2000"></textarea></label>
+    <p class="privacy-note">Os dados são partilhados pelo WhatsApp apenas quando enviar a mensagem. Este formulário não os guarda num servidor.</p>
+    <p class="form-error" role="alert" hidden></p>
+    <button class="button button-coral" type="submit">Continuar no WhatsApp {% include 'website/partials/icon.html' with name='arrow-up-right' size=20 %}</button>
+    <p class="form-status" role="status" hidden>Pedido preparado, ainda não enviado. Envie a mensagem no WhatsApp. <a target="_blank" rel="noopener noreferrer">Abrir novamente {% include 'website/partials/icon.html' with name='arrow-up-right' size=14 %}</a></p>
+  </form>
+</div></section>

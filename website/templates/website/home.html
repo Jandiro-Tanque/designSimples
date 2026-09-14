@@ -1,0 +1,52 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-top">
+    <div class="hero-kicker"><span class="eyebrow">Estúdio independente de desenvolvimento web</span><span class="location"><span></span> Luanda, Angola · Online, em todo o lado</span></div>
+    <h1 id="hero-title">DesignSimples<span class="hero-period">.</span>{% include 'website/partials/icon.html' with name='asterisk' %}</h1>
+    <div class="hero-intro"><p>O seu negócio merece um bom site.<br><span>Vamos torná-lo realidade.</span></p><a class="button button-dark" href="#contacto">Vamos criar o seu site {% include 'website/partials/icon.html' with name='arrow-up-right' size=19 %}</a></div>
+  </div>
+  <div class="hero-image">
+    <img src="{% static 'website/images/architecture.jpg' %}" alt="Casa contemporânea com amplas janelas e jardim" fetchpriority="high">
+    <div class="hero-image-shade"></div>
+    <div class="container hero-image-content"><div><span class="eyebrow">Menos complicação. Mais presença.</span><h2>Boas ideias merecem<br>sair do papel.</h2></div><a href="#projectos" class="hero-project-link">Explore as possibilidades {% include 'website/partials/icon.html' with name='arrow-down' size=20 %}</a></div>
+    <span class="image-caption">Forma Studio / Conceito de site institucional</span>
+  </div>
+</section>
+<div class="promise-strip"><div class="container promise-inner">
+  <span>{% include 'website/partials/icon.html' with name='check' %} Design à medida</span>
+  <span>{% include 'website/partials/icon.html' with name='check' %} Do computador ao telemóvel</span>
+  <span>{% include 'website/partials/icon.html' with name='check' %} Contacto directo com quem cria</span>
+  <span>{% include 'website/partials/icon.html' with name='check' %} Feito em Angola</span>
+</div></div>
+<section class="section container" id="servicos">
+  <div class="section-heading" data-reveal><div><span class="eyebrow section-index">01 / O que fazemos</span><h2>Simples na experiência.<br><span>Sério no resultado.</span></h2></div><p>Para quem está a começar, para quem quer crescer e para quem sabe que está na hora de mudar.</p></div>
+  <div class="services-grid">{% for service in services %}
+    <article class="service" data-reveal>
+      <div class="service-top">{% include 'website/partials/icon.html' with name=service.icon size=27 %}<span>0{{ forloop.counter }}</span></div>
+      <h3>{{ service.title }}</h3><p class="service-label">{{ service.label }}</p><p class="service-description">{{ service.description }}</p>
+      <ul>{% for feature in service.features %}<li>{% include 'website/partials/icon.html' with name='check' size=15 %}{{ feature }}</li>{% endfor %}</ul>
+      <a href="#contacto" class="text-link" data-service="{{ service.title }}">Conversar sobre este serviço {% include 'website/partials/icon.html' with name='arrow-up-right' size=18 %}</a>
+    </article>
+  {% endfor %}</div>
+  <div class="pricing-note"><span>Sem pacotes às cegas. Cada negócio tem o seu ponto de partida.</span><span>Proposta personalizada em Kz {% include 'website/partials/icon.html' with name='arrow-up-right' size=16 %}</span></div>
+</section>
+{% include 'website/partials/projects.html' %}
+<section class="section container process-section" id="processo">
+  <div class="section-heading" data-reveal><div><span class="eyebrow section-index">03 / Do primeiro olá ao site no ar</span><h2>Uma conversa começa.<br><span>Um projecto acontece.</span></h2></div><a class="text-link" href="#contacto">Começamos? {% include 'website/partials/icon.html' with name='arrow-up-right' size=19 %}</a></div>
+  <div class="steps">{% for title, description in steps %}<article data-reveal><span class="step-number">0{{ forloop.counter }}</span><h3>{{ title }}</h3><p>{{ description }}</p></article>{% endfor %}</div>
+</section>
+<section class="about-section"><div class="container about-inner" data-reveal>
+  <div class="about-mark">{% include 'website/partials/icon.html' with name='asterisk' %}<span>Pequeno estúdio.<br>Envolvimento inteiro.</span></div>
+  <div><span class="eyebrow">Uma pessoa real do outro lado.</span><h2>Olá, sou o Jandiro.<br>Vamos construir algo seu.</h2><p>Sou programador em Angola, com foco em Python, Django e desenvolvimento web. Criei o DesignSimples para aproximar a tecnologia de quem tem um negócio para fazer crescer.</p><p>Aqui, fala directamente com quem vai construir o seu site. Da primeira ideia aos últimos detalhes.</p><a class="text-link" href="https://github.com/Jandiro-Tanque" target="_blank" rel="noopener noreferrer">{% include 'website/partials/icon.html' with name='code-2' size=19 %} Conheça o meu trabalho no GitHub {% include 'website/partials/icon.html' with name='arrow-up-right' size=17 %}</a></div>
+</div></section>
+<section class="section container faq-section">
+  <div data-reveal><span class="eyebrow section-index">04 / Sem pontas soltas</span><h2>É normal<br><span>ter perguntas.</span></h2></div>
+  <div class="faq-list">{% for question, answer in faqs %}<details><summary>{{ question }}{% include 'website/partials/icon.html' with name='plus' class='faq-plus' size=20 %}</summary><p>{{ answer }}</p></details>{% endfor %}</div>
+</section>
+{% include 'website/partials/contact.html' %}
+{% endblock %}
+{% block dialogs %}
+  {% for project in concepts %}{% include 'website/partials/project_dialog.html' %}{% endfor %}
+{% endblock %}

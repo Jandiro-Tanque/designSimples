@@ -1,0 +1,15 @@
+<header class="site-header" id="inicio">
+  <div class="container nav-inner">
+    {% include 'website/partials/brand.html' %}
+    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#projectos">Projectos</a>
+      <a href="#processo">Como funciona</a>
+      <a class="nav-contact" href="#contacto">Vamos conversar {% include 'website/partials/icon.html' with name='arrow-up-right' size=17 %}</a>
+    </nav>
+    <button id="menu-toggle" class="icon-button menu-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menu" title="Abrir menu" type="button" hidden>
+      {% include 'website/partials/icon.html' with name='menu' class='menu-open-icon' %}
+      {% include 'website/partials/icon.html' with name='x' class='menu-close-icon' %}
+    </button>
+  </div>
+</header>

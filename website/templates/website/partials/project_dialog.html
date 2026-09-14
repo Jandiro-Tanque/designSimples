@@ -1,0 +1,9 @@
+<dialog class="project-dialog" id="project-{{ project.slug }}" aria-labelledby="title-{{ project.slug }}">
+  <div class="dialog-header"><span class="eyebrow">Projecto demonstrativo</span><button type="button" class="icon-button" data-close-dialog aria-label="Fechar projecto" title="Fechar projecto" autofocus>{% include 'website/partials/icon.html' with name='x' size=22 %}</button></div>
+  {% include 'website/partials/project_preview.html' %}
+  <div class="dialog-body"><span class="eyebrow">{{ project.type }}</span><h2 id="title-{{ project.slug }}">{{ project.name }}</h2><p>{{ project.description }}</p>
+    <ul>{% for feature in project.features %}<li>{% include 'website/partials/icon.html' with name='check' size=16 %}{{ feature }}</li>{% endfor %}</ul>
+    <p class="disclosure">Marca fictícia e conceito visual. Não representa um cliente nem um site publicado.</p>
+    <a href="#contacto" class="button button-dark" data-service="{{ project.service }}">Quero um projecto assim {% include 'website/partials/icon.html' with name='arrow-up-right' size=18 %}</a>
+  </div>
+</dialog>
