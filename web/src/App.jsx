@@ -12,6 +12,7 @@ import {
   MessageCircle,
   PanelsTopLeft,
   Plus,
+  Trophy,
   Wrench,
   X,
 } from "lucide-react";
@@ -485,25 +486,94 @@ function App() {
             <div className="section-heading">
               <div>
                 <span className="eyebrow section-index">
-                  02 / Possibilidades, na prática
+                  02 / Projectos e experiência
                 </span>
                 <h2>
-                  Imagine o seu negócio
+                  Ideias que já
                   <br />
-                  <span>assim.</span>
+                  <span>saíram do papel.</span>
                 </h2>
               </div>
               <p>
-                Três marcas fictícias. Três direcções diferentes.
-                <br />
-                Conceitos para mostrar o que podemos criar.
+                Projectos em que trabalhei, desafios reais e experiência que
+                trago para o seu próximo site.
+              </p>
+            </div>
+            <div className="real-projects" aria-label="Projectos reais">
+              <article className="real-project real-project-kaza">
+                <div className="real-project-top">
+                  <span className="project-badge">
+                    <Trophy size={16} /> 1.º lugar · Hackathon
+                  </span>
+                  <span className="real-project-kind">Turismo sustentável</span>
+                </div>
+                <h3>
+                  KAZA<span>.</span>
+                </h3>
+                <p>
+                  Projecto vencedor do Hackathon de Turismo Sustentável em
+                  Angola, em Julho de 2026. Tecnologia para descobrir destinos e
+                  pontos de interesse do país.
+                </p>
+                <div className="project-contribution">
+                  <span>A minha participação</span>
+                  <strong>Desenvolvimento backend com Django</strong>
+                  <p>
+                    API de destinos, motor de recomendação e integrações de
+                    dados para a plataforma.
+                  </p>
+                </div>
+                <div className="real-project-footer">
+                  <span>Projecto real · Participação em equipa</span>
+                  <span>Demonstração indisponível</span>
+                </div>
+              </article>
+              <article className="real-project real-project-elun">
+                <div className="real-project-top">
+                  <span className="project-badge">
+                    <Globe2 size={16} /> Site publicado
+                  </span>
+                  <span className="real-project-kind">Projecto web</span>
+                </div>
+                <h3>
+                  Elun<span>.</span>
+                </h3>
+                <p>
+                  Um projecto real do meu percurso de desenvolvimento web, com
+                  uma versão publicada que pode visitar.
+                </p>
+                <div className="project-contribution">
+                  <span>Conheça o projecto</span>
+                  <strong>elun.website</strong>
+                  <p>
+                    O site abre na página de entrada. O acesso ao conteúdo
+                    requer uma conta.
+                  </p>
+                </div>
+                <div className="real-project-footer">
+                  <span>Projecto real</span>
+                  <a
+                    className="text-link"
+                    href="https://elun.website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visitar Elun <ArrowUpRight size={18} />
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div className="concept-heading">
+              <h3>Outras possibilidades para o seu negócio.</h3>
+              <p>
+                Marcas fictícias e conceitos visuais, não trabalhos de clientes.
               </p>
             </div>
             <div className="project-toolbar">
               <div
                 className="filters"
                 role="group"
-                aria-label="Filtrar projectos"
+                aria-label="Filtrar conceitos"
               >
                 {["Todos", "Negócios", "Profissionais"].map((item) => (
                   <button

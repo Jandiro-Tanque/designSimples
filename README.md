@@ -42,6 +42,8 @@ Não há envio de email, armazenamento de pedidos, analytics, cookies de aplica�
 
 ## Conteúdo comercial
 
+KAZA e Elun aparecem primeiro como projectos reais do percurso do Jandiro, separados dos conceitos. KAZA é apresentado como vencedor do Hackathon de Turismo Sustentável (Julho de 2026), com participação em equipa e contribuição no backend Django; não tem demonstração pública. Elun liga a https://elun.website, que abre na página de entrada e requer conta para aceder ao conteúdo. A autoria e o prémio baseiam-se nas informações do autor; o acesso público ao Elun foi confirmado no navegador.
+
 Forma Studio, Raiz e Lina Costa são marcas fictícias e conceitos visuais, identificados como tal. Os detalhes abrem num diálogo; não são sites completos nem trabalhos de clientes.
 
 Não foram inventados preços, testemunhos ou estatísticas de clientes. Os valores e prazos devem ser definidos numa proposta real. Domínio, alojamento e manutenção devem ter custos e âmbito explícitos.
