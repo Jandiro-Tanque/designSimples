@@ -35,11 +35,14 @@ class HomeTests(SimpleTestCase):
 
     def test_real_projects_and_concepts_are_distinct(self):
         response = self.client.get(reverse("website:home"))
-        self.assertEqual(len(response.context["real_projects"]), 2)
+        self.assertEqual(len(response.context["real_projects"]), 3)
         self.assertEqual(len(response.context["concepts"]), 3)
         self.assertContains(response, "1.º lugar · Hackathon")
         self.assertContains(response, "Demonstração indisponível")
         self.assertContains(response, 'href="https://elun.website"')
+        self.assertContains(response, "Kengo Store")
+        self.assertContains(response, 'href="https://kengo-store.onrender.com"')
+        self.assertContains(response, "Temporariamente indisponível")
         self.assertContains(response, "Marcas fictícias e conceitos visuais")
 
     def test_static_resources_exist_without_react(self):

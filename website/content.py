@@ -43,6 +43,15 @@ REAL_PROJECTS = [
         "details": "O site abre na página de entrada. O acesso ao conteúdo requer uma conta.",
         "credit": "Projecto real", "status": "Site publicado", "url": "https://elun.website",
     },
+    {
+        "slug": "kengo", "name": "Kengo Store", "icon": "store",
+        "badge": "Temporariamente indisponível", "kind": "Projecto web",
+        "description": "Outro projecto do meu percurso de desenvolvimento web: Kengo Store.",
+        "contribution_label": "A minha participação", "contribution": "Desenvolvimento do projecto",
+        "details": "A versão alojada no Render encontra-se temporariamente indisponível. O endereço está disponível abaixo.",
+        "credit": "Projecto real", "status": "Temporariamente indisponível",
+        "url": "https://kengo-store.onrender.com",
+    },
 ]
 CONCEPTS = [
     {
