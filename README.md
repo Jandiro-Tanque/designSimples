@@ -61,15 +61,26 @@ Não foram inventados preços, testemunhos ou estatísticas de clientes. Os valo
 
 ## Publicação
 
-A versão Django precisa de alojamento Python, não de um build estático React. Pontos de entrada: `config.wsgi:application` ou `config.asgi:application`. O `runserver` é apenas para desenvolvimento; escolha e instale um servidor WSGI/ASGI adequado ao alojamento.
+A versão Django precisa de alojamento Python, não de um build estático React. Pontos de entrada: `config.wsgi:application` ou `config.asgi:application`. O `runserver` é apenas para desenvolvimento; no Render, o `render.yaml` usa Gunicorn e executa as migrações e o `collectstatic` durante o build.
 
 Configure variáveis de ambiente no alojamento:
 
 - `DJANGO_DEBUG=false` (por omissão é `true` para desenvolvimento local).
 - `DJANGO_SECRET_KEY`: segredo forte gerado e guardado fora do Git. É obrigatório com DEBUG desligado.
 - `DJANGO_ALLOWED_HOSTS`: domínios separados por vírgula, sem protocolo.
+- `CSRF_TRUSTED_ORIGINS`: origens completas, incluindo `https://`, separadas por vírgula.
+- `DATABASE_URL`: opcional localmente; no Render, ligue uma base PostgreSQL para não depender do SQLite efémero.
 
-As variáveis são lidas do ambiente do processo; ficheiros `.env` não são carregados automaticamente. Configure HTTPS no servidor/proxy, execute `migrate` e `collectstatic`, e faça o alojamento servir `/static/` a partir de `staticfiles/`. Esta configuração ainda não inclui servidor de produção nem WhiteNoise. Os cookies administrativos são marcados como seguros quando DEBUG está desligado.
+As variáveis são lidas do ambiente do processo; ficheiros `.env` não são carregados automaticamente. O WhiteNoise serve `/static/` a partir de `staticfiles/`, e o proxy HTTPS do Render é considerado quando DEBUG está desligado. Os cookies administrativos são marcados como seguros quando DEBUG está desligado.
+
+### Render
+
+1. Faça push do repositório para o GitHub e crie um Blueprint no Render apontando para o repositório; o `render.yaml` configura o web service.
+2. Crie uma base PostgreSQL no Render e associe a variável `DATABASE_URL` ao web service.
+3. O Blueprint gera `DJANGO_SECRET_KEY`, desliga `DJANGO_DEBUG` e permite o domínio `.onrender.com`. Para um domínio próprio, acrescente-o a `DJANGO_ALLOWED_HOSTS` e a origem HTTPS correspondente em `CSRF_TRUSTED_ORIGINS`.
+4. Depois do primeiro deploy, crie um administrador com `python manage.py createsuperuser` através de um shell do serviço, se o plano do Render disponibilizar essa opção.
+
+O SQLite continua disponível para desenvolvimento local, mas o disco do web service pode ser efémero; não o use como base de dados de produção.
 
 Execute `python manage.py check --deploy` com as variáveis de produção configuradas e resolva os avisos de segurança conforme o alojamento, incluindo redireccionamento HTTPS e HSTS. Confirme contactos, conteúdo comercial, domínio e necessidades legais de privacidade antes de publicar. A aplicação ainda não foi publicada num domínio público.
 
