@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#F4F0E9"/>
+  <circle cx="930" cy="150" r="260" fill="#D96B4A"/>
+  <text x="80" y="120" fill="#242424" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="3">DESIGNSIMPLES.</text>
+  <text x="80" y="560" fill="#242424" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700">A tua marca</text>
+  <text x="80" y="660" fill="#242424" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700">merece presença.</text>
+  <rect x="80" y="760" width="90" height="8" fill="#D96B4A"/>
+  <text x="80" y="840" fill="#6D6A65" font-family="Arial, Helvetica, sans-serif" font-size="32">Ideia de capa para carrossel</text>
+  <text x="80" y="1260" fill="#242424" font-family="Arial, Helvetica, sans-serif" font-size="24">01 / 06</text>
+</svg>

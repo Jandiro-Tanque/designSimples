@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title id="title">Símbolo DS da DesignSimples</title>
+  <rect width="240" height="240" rx="30" fill="#242424"/>
+  <path d="M54 68h24v35h35V68h24v104h-24v-37H78v37H54z" fill="#F4F0E9"/>
+  <path d="M150 68h24v104h-24z" fill="#F4F0E9"/>
+  <circle cx="191" cy="165" r="9" fill="#D96B4A"/>
+</svg>

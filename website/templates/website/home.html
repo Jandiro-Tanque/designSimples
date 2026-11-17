@@ -8,10 +8,10 @@
     <div class="hero-intro"><p>O seu negócio merece um bom site.<br><span>Vamos torná-lo realidade.</span></p><a class="button button-dark" href="#contacto">Vamos criar o seu site {% include 'website/partials/icon.html' with name='arrow-up-right' size=19 %}</a></div>
   </div>
   <div class="hero-image">
-    <img src="{% static 'website/images/architecture.jpg' %}" alt="Casa contemporânea com amplas janelas e jardim" fetchpriority="high">
+    <div class="hero-brand-panel" aria-hidden="true"><span>DS</span><i></i><strong>presença<br>com propósito.</strong></div>
     <div class="hero-image-shade"></div>
     <div class="container hero-image-content"><div><span class="eyebrow">Menos complicação. Mais presença.</span><h2>Boas ideias merecem<br>sair do papel.</h2></div><a href="#projectos" class="hero-project-link">Explore as possibilidades {% include 'website/partials/icon.html' with name='arrow-down' size=20 %}</a></div>
-    <span class="image-caption">Forma Studio / Conceito de site institucional</span>
+    <span class="image-caption">DesignSimples / Desenvolvimento web em Angola</span>
   </div>
 </section>
 <div class="promise-strip"><div class="container promise-inner">
@@ -46,7 +46,4 @@
   <div class="faq-list">{% for question, answer in faqs %}<details><summary>{{ question }}{% include 'website/partials/icon.html' with name='plus' class='faq-plus' size=20 %}</summary><p>{{ answer }}</p></details>{% endfor %}</div>
 </section>
 {% include 'website/partials/contact.html' %}
-{% endblock %}
-{% block dialogs %}
-  {% for project in concepts %}{% include 'website/partials/project_dialog.html' %}{% endfor %}
 {% endblock %}

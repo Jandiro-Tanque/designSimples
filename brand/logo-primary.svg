@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+  <title id="title">DesignSimples</title>
+  <desc id="desc">Logotipo DesignSimples com símbolo DS e ponto coral</desc>
+  <rect width="640" height="180" rx="18" fill="#F4F0E9"/>
+  <g fill="#242424">
+    <path d="M66 54h20v28h28V54h20v72h-20V99H86v27H66z"/>
+    <path d="M157 54h20v72h-20z"/>
+  </g>
+  <circle cx="238" cy="117" r="9" fill="#D96B4A"/>
+  <text x="270" y="115" fill="#242424" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" letter-spacing="-2">designsimples</text>
+  <circle cx="599" cy="112" r="7" fill="#D96B4A"/>
+</svg>

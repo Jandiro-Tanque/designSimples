@@ -2,7 +2,6 @@
 
 Site comercial de um estúdio independente de desenvolvimento web em Angola.
 A aplicação principal usa **Django 5.2 LTS com templates**, CSS e JavaScript simples. Não precisa de React, Vite ou Node para funcionar.
-A pasta `web/` contém a versão React anterior, preservada como referência; os ficheiros HTML/CSS/JS antigos da raiz e a ideia original também foram mantidos. Não são carregados pelo Django.
 
 ## Desenvolvimento
 
@@ -30,16 +29,17 @@ Em Linux/macOS, use `python3 -m venv .venv` e `.venv/bin/python` nos restantes c
 
 - `manage.py`: comandos Django.
 - `config/`: settings, URLs, WSGI e ASGI.
-- `website/content.py`: contactos, serviços, projectos reais, conceitos e perguntas frequentes.
+- `website/content.py`: contactos, serviços, projectos reais e perguntas frequentes.
 - `website/views.py`: contexto da página.
 - `website/templates/website/base.html`: estrutura, metadados e recursos estáticos.
 - `website/templates/website/home.html`: página inicial; `partials/` contém as secções reutilizáveis.
 - `website/static/website/css/`: estilos base, layout preservado e animações discretas em `motion.css`.
-- `website/static/website/js/site.js`: menu, filtros, diálogos, WhatsApp e animações ao entrar no ecrã.
+- `website/static/website/js/site.js`: menu, formulário, WhatsApp e animações ao entrar no ecrã.
 - `website/static/website/images/`: imagens locais; `vendor/` contém Lucide 0.468.0 e a sua licença original.
+- `brand/`: logo, guia rápido da identidade visual e template inicial para carrosséis do Instagram.
 - `website/tests.py`: sete testes de renderização, conteúdo, recursos, escape HTML e comportamento HTTP.
 
-Edite `CONTACT`, `SERVICES`, `REAL_PROJECTS` e `CONCEPTS` em `website/content.py` para actualizar o site. Confirme os contactos antes de publicar. O conteúdo ainda é gerido em Python, não pelo Admin.
+Edite `CONTACT`, `SERVICES`, `REAL_PROJECTS`, `STEPS` e `FAQS` em `website/content.py` para actualizar o site. Confirme os contactos antes de publicar. O conteúdo ainda é gerido em Python, não pelo Admin.
 
 O Admin padrão está em `/admin/`; para criar o seu próprio utilizador, execute `python manage.py createsuperuser` no ambiente virtual e introduza a password directamente no terminal. Não foi criada nenhuma conta administrativa por esta migração. SQLite, ambiente virtual e ficheiros `.env` estão excluídos do Git.
 
@@ -53,9 +53,7 @@ Sem JavaScript, a navegação, os conteúdos, as perguntas frequentes e os links
 
 ## Conteúdo comercial
 
-KAZA e Elun aparecem primeiro como projectos reais do percurso do Jandiro, separados dos conceitos. KAZA é apresentado como vencedor do Hackathon de Turismo Sustentável (Julho de 2026), com participação em equipa e contribuição no backend Django; não tem demonstração pública. Elun liga a https://elun.website, que abre na página de entrada e requer conta para aceder ao conteúdo. A autoria e o prémio baseiam-se nas informações do autor; o acesso público ao Elun foi confirmado no navegador.
-
-Forma Studio, Raiz e Lina Costa são marcas fictícias e conceitos visuais, identificados como tal. Os detalhes abrem num diálogo; não são sites completos nem trabalhos de clientes.
+KAZA, Elun e Kengo Store são projectos reais do percurso do Jandiro. KAZA é apresentado como vencedor do Hackathon de Turismo Sustentável (Julho de 2026), com participação em equipa e contribuição no backend Django; não tem demonstração pública. Elun liga a https://elun.website, que abre na página de entrada e requer conta para aceder ao conteúdo. A autoria e o prémio baseiam-se nas informações do autor; o acesso público ao Elun foi confirmado no navegador.
 
 Não foram inventados preços, testemunhos ou estatísticas de clientes. Os valores e prazos devem ser definidos numa proposta real. Domínio, alojamento e manutenção devem ter custos e âmbito explícitos.
 
@@ -84,22 +82,11 @@ O SQLite continua disponível para desenvolvimento local, mas o disco do web ser
 
 Execute `python manage.py check --deploy` com as variáveis de produção configuradas e resolva os avisos de segurança conforme o alojamento, incluindo redireccionamento HTTPS e HSTS. Confirme contactos, conteúdo comercial, domínio e necessidades legais de privacidade antes de publicar. A aplicação ainda não foi publicada num domínio público.
 
-## Imagens
-
-Fotografias do Unsplash utilizadas como imagens ilustrativas dos conceitos, não como fotografias de trabalhos realizados pelo DesignSimples. Fontes das cópias locais:
-
-- Arquitectura: https://images.unsplash.com/photo-1600585154340-be6161a56a0c
-- Gastronomia: https://images.unsplash.com/photo-1512621776951-a57141f2eefd
-- Retrato: https://images.unsplash.com/photo-1534528741775-53994a69daeb
-- Licença: https://unsplash.com/license
-
 ## Verificação manual
 
-1. Filtrar por Todos, Negócios e Profissionais.
-2. Abrir um conceito e fechar pelo botão, pelo fundo e por Escape; confirmar que o foco volta ao projecto.
-3. Escolher um serviço ou um conceito e confirmar a pré-selecção no formulário.
-4. Submeter vazio ou apenas com espaços: não deve abrir o WhatsApp.
-5. Preencher com acentos e `&`: verificar o texto preparado sem enviar uma mensagem de teste ao destinatário.
-6. Confirmar o link alternativo e que editar o pedido limpa o estado anterior.
-7. Testar menu móvel, perguntas frequentes, teclado e larguras de 320 a 1920 px.
-8. Confirmar movimento reduzido e conteúdo/contacto directo com JavaScript desligado.
+1. Escolher um serviço e confirmar a pré-selecção no formulário.
+2. Submeter vazio ou apenas com espaços: não deve abrir o WhatsApp.
+3. Preencher com acentos e `&`: verificar o texto preparado sem enviar uma mensagem de teste ao destinatário.
+4. Confirmar o link alternativo e que editar o pedido limpa o estado anterior.
+5. Testar menu móvel, perguntas frequentes, teclado e larguras de 320 a 1920 px.
+6. Confirmar movimento reduzido e conteúdo/contacto directo com JavaScript desligado.

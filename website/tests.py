@@ -33,23 +33,22 @@ class HomeTests(SimpleTestCase):
         response = self.client.post(reverse("website:home"), {"name": "Test"})
         self.assertEqual(response.status_code, 405)
 
-    def test_real_projects_and_concepts_are_distinct(self):
+    def test_real_projects_are_shown(self):
         response = self.client.get(reverse("website:home"))
         self.assertEqual(len(response.context["real_projects"]), 3)
-        self.assertEqual(len(response.context["concepts"]), 3)
         self.assertContains(response, "1.º lugar · Hackathon")
         self.assertContains(response, "Demonstração indisponível")
         self.assertContains(response, 'href="https://elun.website"')
         self.assertContains(response, "Kengo Store")
         self.assertContains(response, 'href="https://kengo-store.onrender.com"')
         self.assertContains(response, "Temporariamente indisponível")
-        self.assertContains(response, "Marcas fictícias e conceitos visuais")
+        self.assertNotContains(response, "Marcas fictícias e conceitos visuais")
 
     def test_static_resources_exist_without_react(self):
         response = self.client.get(reverse("website:home"))
         parser = PageParser()
         parser.feed(response.content.decode())
-        self.assertGreater(len(parser.resources), 8)
+        self.assertGreaterEqual(len(parser.resources), 5)
         for resource in parser.resources:
             with self.subTest(resource=resource):
                 self.assertTrue(resource.startswith("/static/"))
@@ -57,14 +56,11 @@ class HomeTests(SimpleTestCase):
         self.assertNotContains(response, "@vite")
         self.assertNotContains(response, "react")
 
-    def test_dialog_ids_are_unique(self):
+    def test_page_ids_are_unique(self):
         response = self.client.get(reverse("website:home"))
         parser = PageParser()
         parser.feed(response.content.decode())
         self.assertEqual(len(parser.ids), len(set(parser.ids)))
-        for slug in ("forma", "raiz", "lina"):
-            self.assertIn(f"project-{slug}", parser.ids)
-            self.assertIn(f"title-{slug}", parser.ids)
 
     def test_content_is_escaped(self):
         with patch("website.views.REAL_PROJECTS", [{"name": '<script>alert("test")</script>'}]):

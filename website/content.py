@@ -53,42 +53,6 @@ REAL_PROJECTS = [
         "url": "https://kengo-store.onrender.com",
     },
 ]
-CONCEPTS = [
-    {
-        "slug": "forma", "name": "Forma Studio", "category": "Negócios",
-        "type": "Arquitectura · Site institucional",
-        "image": "website/images/architecture.jpg",
-        "alt": "Casa contemporânea com amplas janelas e jardim",
-        "headline": "Espaços para\nviver melhor.",
-        "eyebrow": "PENSADO PARA SI", "tagline": "Arquitectura & interiores",
-        "action": "Conheça o trabalho", "caption": "Cada espaço começa com uma ideia.",
-        "description": "Um conceito para um atelier de arquitectura: projectos em destaque, apresentação do estúdio e contacto para novos pedidos.",
-        "features": ["Galeria de projectos", "Apresentação do atelier", "Pedido de contacto"],
-        "service": "Site institucional",
-    },
-    {
-        "slug": "raiz", "name": "Raiz", "category": "Negócios",
-        "type": "Restauração · Landing page", "image": "website/images/food.jpg",
-        "alt": "Prato fresco com legumes e ingredientes coloridos",
-        "headline": "À mesa,\ncomo em casa.",
-        "eyebrow": "FRESCO. LOCAL. NOSSO.", "tagline": "Sabor que nos aproxima",
-        "action": "À nossa mesa", "caption": "Os melhores momentos começam à mesa.",
-        "description": "Um conceito para um restaurante local, onde a comida ocupa o primeiro plano e fazer uma reserva fica à distância de uma mensagem.",
-        "features": ["Destaques da ementa", "Horários e localização", "Reservas pelo WhatsApp"],
-        "service": "Landing page",
-    },
-    {
-        "slug": "lina", "name": "Lina Costa", "category": "Profissionais",
-        "type": "Fotografia · Portfólio", "image": "website/images/portrait.jpg",
-        "alt": "Retrato fotográfico de uma mulher em luz natural",
-        "headline": "Pessoas reais.\nHistórias únicas.",
-        "eyebrow": "UM OLHAR MAIS PRÓXIMO", "tagline": "Fotografia com alma",
-        "action": "Conheça o trabalho", "caption": "O extraordinário nos dias comuns.",
-        "description": "Um conceito de portfólio para uma fotógrafa independente: séries de imagens, serviços e pedidos de sessões num só lugar.",
-        "features": ["Portfólio visual", "Serviços de fotografia", "Pedido de sessão"],
-        "service": "Site institucional",
-    },
-]
 STEPS = [
     ("Conversamos", "Conta-me sobre o negócio, o que precisa e o que quer alcançar. Primeiro, ouvir."),
     ("Definimos", "Recebe uma proposta com âmbito, investimento e prazo. Tudo claro antes de avançar."),
